@@ -4,7 +4,7 @@ A framework-free (vanilla HTML/CSS/JS) website for a student newspaper — secti
 pages, articles, sports, videos, puzzles & games, search, and an in-app
 **editor dashboard**. No build step, no dependencies.
 
-**▶ Live demo: <https://ariel-378.github.io/finalsite-newspaper-template/>**
+**▶ Live demo: <https://ariel-378.github.io/student-newspaper-template/>**
 
 The demo runs in standalone mode with no host platform behind it, so you can
 open the editor yourself: use the **"Editor preview"** link in the account bar,
@@ -91,6 +91,9 @@ in a private window) to get back to the shipped version.
   for hosting, authentication, and content persistence.
 - **[CUSTOMIZE.md](CUSTOMIZE.md)** — rebrand the paper for your school (the Brand
   design tab, or editing `config.js`).
+- **[EDITORIAL.md](EDITORIAL.md)** — who publishes, how corrections work, when a
+  story comes down, and who holds the accounts. The half of running a paper that
+  isn't software.
 
 ## Project layout
 
