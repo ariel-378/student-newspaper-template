@@ -45,7 +45,7 @@ npm install   # once — pulls jsdom, the only dependency
 npm test
 ```
 
-757 checks across 14 suites: every page loads clean, every editor control is
+762 checks across 14 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 
@@ -102,3 +102,12 @@ in a private window) to get back to the shipped version.
 | `*-store.js` | CRUD / data layer — the seam for server-backed persistence |
 | `auth.js` | Identity adapter (`window.WLAuth`; reads `WL_CONTEXT`) |
 | `nav.js`, `brand.js`, `section.js`, … | Shared rendering |
+
+## Licence
+
+[MIT](LICENSE) — take it, rename it, run your own paper on it. No attribution
+required in the site itself, though a line in your colophon is welcome.
+
+The sample content is invented (East High School, The Wildcat Times, every
+byline and score) and is covered by the same licence. Real student journalism
+lives in each school's own deployment, not here.

@@ -61,9 +61,10 @@ window.WL_CONFIG = {
   homeTeam: "Home",
 
   // ── Where newsletter signups go ──────────────────────────────────────────
-  //  The Subscribe link in the utility bar collects an email (and optional
-  //  phone) and appends it to a Google Sheet through a Google Apps Script web
-  //  app. Follow setup/README.md, then paste the web-app URL here:
+  //  The Subscribe link in the utility bar collects an email address — and only
+  //  an email address, no phone numbers — and appends it to a Google Sheet
+  //  through a Google Apps Script web app. Follow setup/README.md, then paste
+  //  the web-app URL here:
   //    https://script.google.com/macros/s/AKfycb.../exec
   //
   //  Until this is filled in, the form does NOT silently discard addresses —
