@@ -60,6 +60,12 @@ window.WL_CONFIG = {
   //  brackets page highlights this team. Leave as "Home" if you use that.
   homeTeam: "Home",
 
+  // ── Where the site lives ─────────────────────────────────────────────────
+  //  Used by `npm run brand` to generate sitemap.xml and robots.txt, which
+  //  need absolute URLs. Leave blank until you know the address; no sitemap is
+  //  better than one pointing at somebody else's site.
+  siteUrl: "https://ariel-378.github.io/student-newspaper-template",
+
   // ── Where newsletter signups go ──────────────────────────────────────────
   //  The Subscribe link in the utility bar collects an email address — and only
   //  an email address, no phone numbers — and appends it to a Google Sheet
