@@ -133,7 +133,12 @@ publication, not by a student who graduates.
 |---|---|---|
 | The site repository | `[ ]` | `[ ]` |
 | The subscriber list and its script | `[ ]` | `[ ]` |
+| The shared-editing service, if you run one | `[ ]` | `[ ]` |
+| The editor key for shared editing | — | Every editor; change it when one leaves |
 | The domain, if any | `[ ]` | — |
+
+If you run shared editing, that service holds the paper's working content. On a
+student's personal account, the paper loses it the day that account goes.
 
 **Review every August.** An account nobody can get into is the ordinary way a
 student publication loses its archive.
