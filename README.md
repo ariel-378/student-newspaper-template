@@ -13,7 +13,7 @@ you — click **Reset demo data** in the dashboard to put it back.
 
 ## Highlights
 
-- **Editor dashboard** — create and edit articles, and manage staff, sports, ads,
+- **Editor dashboard** — create and edit articles, and manage staff, sports,
   videos, and the puzzles & games pages.
 - **Editor-managed sections** — add, rename, reorder, and remove sections, and
   choose which section fills each home-page slot. The nav, section pages, home
@@ -43,12 +43,12 @@ you — click **Reset demo data** in the dashboard to put it back.
 
 The repo ships with a demo newsroom so a fresh copy looks like a working paper
 rather than an empty page: eleven stories, three teams with brackets, two
-videos, four sidebar ads, and flat SVG illustrations standing in for photos.
+videos, and flat SVG illustrations standing in for photos.
 
 **All of it is invented** — East High School, The Wildcat Times, every byline,
 every person quoted, every score. None of it refers to a real school or a real
 person. To start clean, empty the objects in `articles.js`, `teams.js`,
-`videos.js` and `ads.js`; each file says so at the top.
+and `videos.js`; each file says so at the top.
 
 ## Tests
 
@@ -57,7 +57,7 @@ npm install   # once — pulls jsdom, the only dependency
 npm test
 ```
 
-960 checks across 21 suites: every page loads clean, every editor control is
+946 checks across 21 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 
