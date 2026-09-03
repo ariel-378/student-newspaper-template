@@ -39,6 +39,33 @@ leaving it ambiguous until the first difficult story.
 
 Whichever you choose, tell every editor with publish access on their first day.
 
+### Does the online edition screen anything a second time?
+
+**Decide this early, because it decides how much work the site is.**
+
+Many papers put the same stories online that ran in print. If that is you, they
+have already been reported, edited and approved once, and publishing online is
+republishing rather than a second editorial decision. Say so — it answers the
+question everyone asks first, which is *who checks this before it goes up.*
+
+What still needs an answer either way is **anything with no print edition behind
+it**: video, puzzles and games, and anything posted between issues as breaking
+news. That material has not been through the print process, because there was no
+print process for it. Whoever reads it first is a real decision, and it is the
+adviser's to make.
+
+`[ ]` Online carries print's stories as-is · `[ ]` Online is screened separately
+
+### Who can pull something down
+
+**This template assumes the adviser has the same access as the students** — the
+same publish and unpublish rights, used directly, without asking anyone.
+
+That is worth doing on purpose. An adviser who has to reach a teenager to get
+something taken down does not really hold the authority everyone assumes they
+hold, and the gap only shows up on the worst possible day. One group, one tier,
+same rights.
+
 ### What gets a second adult read before publishing
 
 Independence isn't recklessness. Regardless of which model you pick, bring
