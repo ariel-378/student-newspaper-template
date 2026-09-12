@@ -24,6 +24,12 @@ you — click **Reset demo data** in the dashboard to put it back.
   tags, team pages and the centerspread all included, each keeping its own
   layout. The home page is arranged differently — by choosing which section
   fills each slot, above.
+- **Tags, if you want them** — editors keep a list of tags and switch the whole
+  system on or off. Tagged articles get a tag page, and **search finds them**:
+  a reader looking for *music* gets every article filed under Music, whether or
+  not the word appears in the text, with the matching tag shown on the result so
+  it is clear why it came up. Switched off, tags are hidden everywhere,
+  search included — not deleted.
 - **Plan an edition ahead** — every piece of content takes a publish date and
   time and stays invisible to readers until it arrives: articles, poems, art,
   videos, custom features and games alike. A **Schedule** tab gathers the whole
@@ -59,7 +65,7 @@ npm install   # once — pulls jsdom, the only dependency
 npm test
 ```
 
-1034 checks across 24 suites: every page loads clean, every editor control is
+1041 checks across 24 suites: every page loads clean, every editor control is
 pressed without throwing, and content added in the editor reaches the reader
 pages. See [tests/README.md](tests/README.md).
 
