@@ -100,8 +100,22 @@ export async function run() {
   //  asset paths rewritten at build time; runtime-built links are not in the
   //  markup to rewrite, so nothing caught this.
   {
-    const id = ids[0];
-    const ctx = await loadPage(`${OUT_DIR}/${id}.html`, { editor: true });
+    // Tags ON, and on an article that actually has some. The first version of
+    // this ran with tags off, so no tag chip existed to check — the tag links
+    // were broken behind a test reporting everything fine. A link test has to
+    // render the links that actually ship.
+    //
+    // The tag list is taken from the article rather than hardcoded, so this
+    // works in any paper whatever its tags are called.
+    // Prefer a story that has both, so one page exercises links, tags and
+    // images together.
+    const id = ids.find(i => (all[i].tags || []).length && (all[i].photo || "").trim())
+            || ids.find(i => (all[i].tags || []).length)
+            || ids[0];
+    const ctx = await loadPage(`${OUT_DIR}/${id}.html`, {
+      editor: true,
+      storage: { wl_tags: JSON.stringify({ enabled: true, list: all[id].tags || [] }) },
+    });
     opened.push(ctx);
     // Editor chrome only renders for an editor, and it has links of its own.
     if (ctx.window.WLAuth && ctx.window.WLAuth.renderAccountBar) ctx.window.WLAuth.renderAccountBar();
@@ -117,6 +131,50 @@ export async function run() {
     });
     check.equal("every link on a story page resolves to a real file",
       broken.length, 0, broken.join(" | "));
+    // Prove the tag links were actually among what was checked, so this cannot
+    // quietly go back to testing nothing.
+    // Images, for the same reason and missed the same way: the article photo,
+    // the gallery and the masthead flourish are all set after the page loads,
+    // so the build never sees them. On a story page they pointed at
+    // stories/media/… and every article was missing its picture while the
+    // homepage looked fine.
+    {
+      const badImgs = [];
+      ctx.document.querySelectorAll("img[src]").forEach(img => {
+        const src = img.getAttribute("src");
+        if (!src || /^(https?:|data:)/.test(src)) return;
+        const target = path.normalize(path.join(SITE, OUT_DIR, src));
+        if (!fs.existsSync(target)) badImgs.push(src);
+      });
+      check.equal("every image on a story page resolves to a real file",
+        badImgs.length, 0, [...new Set(badImgs)].join(" | "));
+      // Derived from the article, not from a filename convention: this paper
+      // calls them photo-*.jpg, another calls them art-*.svg.
+      const wanted = (all[id].photo || "").split("/").pop();
+      if (wanted) {
+        check.ok("and the story's own photo was among them",
+          [...ctx.document.querySelectorAll("img[src]")]
+            .some(i => (i.getAttribute("src") || "").endsWith(wanted)),
+          `no <img> for ${wanted} — the check would pass while photos were broken`);
+      } else {
+        check.ok("no article in this paper has a photo, so there is none to check", true);
+      }
+    }
+
+    check.ok("and tag links were among them",
+      [...ctx.document.querySelectorAll("a[href]")].some(a => /tag\.html/.test(a.getAttribute("href") || "")),
+      "no tag link rendered — the check would pass while tags were broken");
+  }
+
+  // ===== A story page is still article.html underneath =====
+  //  Layouts are stored per page, keyed by filename. Left alone, every story
+  //  page would keep a private layout and an editor arranging an article would
+  //  never see it on the page readers actually get.
+  {
+    const ctx = await loadPage(`${OUT_DIR}/${ids[0]}.html`, { editor: true });
+    opened.push(ctx);
+    check.equal("a story page declares itself as the article layout",
+      ctx.document.body.dataset.layoutPage, "article");
   }
 
   // ===== Old links keep working =====
