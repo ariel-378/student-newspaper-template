@@ -148,6 +148,9 @@ Two things worth knowing:
 - **[FINALSITE.md](FINALSITE.md)** — how the site integrates with Finalsite: the
   identity contract (`WL_CONTEXT`), the **editors-group logic**, and a phased plan
   for hosting, authentication, and content persistence.
+- **[CODE-GUIDE.md](CODE-GUIDE.md)** — a developer's tour of the code: how a
+  page boots, where content comes from, the store pattern, and the things that
+  will surprise you.
 - **[CUSTOMIZE.md](CUSTOMIZE.md)** — rebrand the paper for your school (the Brand
   design tab, or editing `config.js`).
 
